@@ -52,7 +52,8 @@ Run python file `python train_model.py -[Command option] `
 | -m, --module       | Choose the sequence truncation and balancing method for model training [required]              | 1: Repeat with Gap<br /> 2. ASW<br />3. Fixed-Cut |
 | -e, --epochs       | Specify the maximum number of epochs used for training the model         | Example: 100                                      |
 | -a, --architecture | Select the network architecture for training                     | 1: CNN<br />2. BiLSTM+CNN                         |
-| -l, --length       | Specify the subsequence length as input unit                              | Example: 250                                      |
+| -l, --subseqlength      | Specify the subsequence length as input unit                              | Default: 250                                      |
+| -s, --step      | Specify the stride of the sliding windown                              | Default: 200                                      |
 
 
 
