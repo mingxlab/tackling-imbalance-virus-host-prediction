@@ -37,6 +37,8 @@ Train your own model through our project requires the following two steps.
 
 We provide a data file ``overall_database.csv`` that was used in the experiments performed in our paper. You can continue to use this file, or use your own data file, as long as it is in the same dataset format as ours. Run `python make_dataset.py`, and train, val, test files for sequence and  label will be generated in the default archive.
 
+The `dataDeal` directory contains the algorithms used to dealing with sequence length imbalance. It will be specified and called in the model training and testing step. 
+
 ### Train model
 
 `cd train  ` 
@@ -45,12 +47,12 @@ Run python file `python train_model.py -[Command option] `
 
 | Command            | Function                                                     | Option                                            |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------- |
-| -i, --input_path   | either the  archive path with dataset files, which  archive need contains train, val, test files for sequence and  label [required] | Your path                                         |
-| -o, --output_path  | path where to save the output [required]                     | Your path                                         |
-| -m, --module       | choose data deal module for training [required]              | 1: Repeat with Gap<br /> 2. ASW<br />3. Fixed-Cut |
-| -e, --epochs       | maximum number of epochs used for training the model         | Example: 100                                      |
-| -a, --architecture | select network architecture for training                     | 1: CNN<br />2. BiLSTM+CNN                         |
-| -l, --length       | specify the subsequence length                               | Example: 250                                      |
+| -i, --input_path   | Enter the  archive path with dataset files, which  contains train, val, test files of sequences and  labels [required] | Your path                                         |
+| -o, --output_path  | Path where the output will be saved [required]                     | Your path                                         |
+| -m, --module       | Choose the sequence truncation and balancing method for model training [required]              | 1: Repeat with Gap<br /> 2. ASW<br />3. Fixed-Cut |
+| -e, --epochs       | Specify the maximum number of epochs used for training the model         | Example: 100                                      |
+| -a, --architecture | Select the network architecture for training                     | 1: CNN<br />2. BiLSTM+CNN                         |
+| -l, --length       | Specify the subsequence length as input unit                              | Example: 250                                      |
 
 
 
@@ -58,6 +60,6 @@ Run python file `python train_model.py -[Command option] `
 
 `cd train  ` 
 
-Run python file `python test.py -[Command option] `, then it will load checkpoints of "best loss model" and "best acc model" which had been saved in the previous process of training the model.
+Run python file `python test.py -[Command option] `.  It will load checkpoints of "best loss model" and "best acc model" which have been saved in the Train model step.
 
 Commands and options are the same as Train model.
