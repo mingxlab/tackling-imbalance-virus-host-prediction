@@ -33,7 +33,7 @@ We use linux and anaconda environment with RTX 2080Ti as the model training plat
 
 Train your own model through our project requires the following two steps.
 
-### Datasets Prepare
+### Datasets Preparation
 
 We provide a data file ``overall_database.csv`` that was used in the experiments performed in our paper. You can continue to use this file, or use your own data file, as long as it is in the same dataset format as ours. Run `python make_dataset.py`, and train, val, test files for sequence and  label will be generated in the default archive.
 
