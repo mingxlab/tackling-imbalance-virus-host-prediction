@@ -54,6 +54,7 @@ Run python file `python train_model.py -[Command option] `
 | -a, --architecture | Select the network architecture for training                     | 1: CNN<br />2. BiLSTM+CNN                         |
 | -l, --subseqlength      | Specify the subsequence length as input unit                              | Default: 250                                      |
 | -s, --step      | Specify the stride of the sliding windown                              | Default: 200                                      |
+| -S, --sample       | select data balance method (undersampling, oversampling)      | Example: u                                        |
 
 
 
